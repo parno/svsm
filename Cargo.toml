@@ -102,7 +102,7 @@ embedded-io = { version = "0.6.1" }
 verus_builtin = { version = "0.0.0-2026-05-17-0151", default-features = false }
 verus_builtin_macros = { version = "0.0.0-2026-05-31-0205", features = ["vpanic"], default-features = false }
 verus_state_machines_macros = { version = "0.0.0-2026-05-31-0205", default-features = false }
-vstd = { version = "=0.0.0-2026-05-31-0205", features = ["alloc", "allow_panic"], default-features = false }
+vstd = { version = "=0.0.0-2026-06-14-0213", features = ["alloc", "allow_panic"], default-features = false }
 
 # Verification libs
 verify_proof = { path = "verification/verify_proof", default-features = false  }
