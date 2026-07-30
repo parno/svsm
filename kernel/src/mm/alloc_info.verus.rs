@@ -713,11 +713,14 @@ impl PageInfoDb {
         implies ({
             let _ = self@[idx]; // fire self.wf() trigger
             &&& removed@[idx] == self@[idx]
+            &&& removed.wf_follows(idx)
+            &&& removed.wf_basic(idx)
             &&& (removed@[idx].is_head() ==> removed.restrict(idx).wf_unit())
         })
         by {
             assert(self@.dom().contains(idx));
             assert(removed@[idx] == self@[idx]);
+            assert(self.wf_follows(idx) && self.wf_basic(idx));
             if removed@[idx].is_head() {
                 assert(self.is_head(idx));
                 assert(i != idx);
